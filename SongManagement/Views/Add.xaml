@@ -1,0 +1,39 @@
+﻿<Window x:Class="SongManagement.Views.Add"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Search Songs" Height="400" Width="500">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="0,0,0,10">
+            <TextBlock Text="Add song" FontSize="20" FontWeight="Bold" Margin="0,0,0,10"/>
+            <StackPanel Orientation="Vertical" Margin="0,0,0,10">
+                <TextBlock Text="ID:"/>
+                <TextBox Text="{Binding ID}" IsReadOnly="True" Margin="0,5"/>
+                
+                <TextBlock Text="Song Name:"/>
+                <TextBox Text="{Binding NewSong.SongName, UpdateSourceTrigger=PropertyChanged}" />
+
+                <TextBlock Text="Singer Name:"/>
+                <TextBox Text="{Binding NewSong.SingerName, UpdateSourceTrigger=PropertyChanged}" />
+
+                <TextBlock Text="Genre:"/>
+                <TextBox Text="{Binding NewSong.Genre, UpdateSourceTrigger=PropertyChanged}" />
+
+                <TextBlock Text="Country:"/>
+                <TextBox Text="{Binding NewSong.Country, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBlock Text="Release Date:"/>
+                <DatePicker SelectedDate="{Binding NewSong.ReleaseDate, UpdateSourceTrigger=PropertyChanged}" />
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Add" Width="80" Margin="5" Command="{Binding SearchCommand}" Click="Button_Click"/>
+            <Button Content="Back" Width="80" Margin="5" />
+        </StackPanel>
+    </Grid>
+</Window>

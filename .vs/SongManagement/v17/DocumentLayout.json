@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "D:\\Thanh\u0027s Coding Workspace\\SongManagement\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6DB9E2AF-E842-4C2F-997C-FA77EF9F9B2A}|SongManagement\\SongManagement.csproj|d:\\thanh\u0027s coding workspace\\songmanagement\\songmanagement\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6DB9E2AF-E842-4C2F-997C-FA77EF9F9B2A}|SongManagement\\SongManagement.csproj|solutionrelative:songmanagement\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6DB9E2AF-E842-4C2F-997C-FA77EF9F9B2A}|SongManagement\\SongManagement.csproj|d:\\thanh\u0027s coding workspace\\songmanagement\\songmanagement\\views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6DB9E2AF-E842-4C2F-997C-FA77EF9F9B2A}|SongManagement\\SongManagement.csproj|solutionrelative:songmanagement\\views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,16 +11,28 @@
       "RelativeMoniker": "D:0:0:{6DB9E2AF-E842-4C2F-997C-FA77EF9F9B2A}|SongManagement\\SongManagement.csproj|solutionrelative:songmanagement\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6DB9E2AF-E842-4C2F-997C-FA77EF9F9B2A}|SongManagement\\SongManagement.csproj|d:\\thanh\u0027s coding workspace\\songmanagement\\songmanagement\\relaycommand\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6DB9E2AF-E842-4C2F-997C-FA77EF9F9B2A}|SongManagement\\SongManagement.csproj|solutionrelative:songmanagement\\relaycommand\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6DB9E2AF-E842-4C2F-997C-FA77EF9F9B2A}|SongManagement\\SongManagement.csproj|d:\\thanh\u0027s coding workspace\\songmanagement\\songmanagement\\views\\add.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DB9E2AF-E842-4C2F-997C-FA77EF9F9B2A}|SongManagement\\SongManagement.csproj|solutionrelative:songmanagement\\views\\add.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DB9E2AF-E842-4C2F-997C-FA77EF9F9B2A}|SongManagement\\SongManagement.csproj|d:\\thanh\u0027s coding workspace\\songmanagement\\songmanagement\\views\\add.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6DB9E2AF-E842-4C2F-997C-FA77EF9F9B2A}|SongManagement\\SongManagement.csproj|solutionrelative:songmanagement\\views\\add.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DB9E2AF-E842-4C2F-997C-FA77EF9F9B2A}|SongManagement\\SongManagement.csproj|d:\\thanh\u0027s coding workspace\\songmanagement\\songmanagement\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DB9E2AF-E842-4C2F-997C-FA77EF9F9B2A}|SongManagement\\SongManagement.csproj|solutionrelative:songmanagement\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DB9E2AF-E842-4C2F-997C-FA77EF9F9B2A}|SongManagement\\SongManagement.csproj|d:\\thanh\u0027s coding workspace\\songmanagement\\songmanagement\\viewmodel\\addsongviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DB9E2AF-E842-4C2F-997C-FA77EF9F9B2A}|SongManagement\\SongManagement.csproj|solutionrelative:songmanagement\\viewmodel\\addsongviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6DB9E2AF-E842-4C2F-997C-FA77EF9F9B2A}|SongManagement\\SongManagement.csproj|d:\\thanh\u0027s coding workspace\\songmanagement\\songmanagement\\models\\song.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6DB9E2AF-E842-4C2F-997C-FA77EF9F9B2A}|SongManagement\\SongManagement.csproj|solutionrelative:songmanagement\\models\\song.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6DB9E2AF-E842-4C2F-997C-FA77EF9F9B2A}|SongManagement\\SongManagement.csproj|d:\\thanh\u0027s coding workspace\\songmanagement\\songmanagement\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6DB9E2AF-E842-4C2F-997C-FA77EF9F9B2A}|SongManagement\\SongManagement.csproj|solutionrelative:songmanagement\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6DB9E2AF-E842-4C2F-997C-FA77EF9F9B2A}|SongManagement\\SongManagement.csproj|d:\\thanh\u0027s coding workspace\\songmanagement\\songmanagement\\relaycommand\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DB9E2AF-E842-4C2F-997C-FA77EF9F9B2A}|SongManagement\\SongManagement.csproj|solutionrelative:songmanagement\\relaycommand\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6DB9E2AF-E842-4C2F-997C-FA77EF9F9B2A}|SongManagement\\SongManagement.csproj|d:\\thanh\u0027s coding workspace\\songmanagement\\songmanagement\\views\\search.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -40,6 +48,10 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DB9E2AF-E842-4C2F-997C-FA77EF9F9B2A}|SongManagement\\SongManagement.csproj|d:\\thanh\u0027s coding workspace\\songmanagement\\songmanagement\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DB9E2AF-E842-4C2F-997C-FA77EF9F9B2A}|SongManagement\\SongManagement.csproj|solutionrelative:songmanagement\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -49,7 +61,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -61,33 +73,71 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
+              "Title": "AddSongViewModel.cs",
+              "DocumentMoniker": "D:\\Thanh\u0027s Coding Workspace\\SongManagement\\SongManagement\\ViewModel\\AddSongViewModel.cs",
+              "RelativeDocumentMoniker": "SongManagement\\ViewModel\\AddSongViewModel.cs",
+              "ToolTip": "D:\\Thanh\u0027s Coding Workspace\\SongManagement\\SongManagement\\ViewModel\\AddSongViewModel.cs",
+              "RelativeToolTip": "SongManagement\\ViewModel\\AddSongViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-11T11:13:19.675Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Add.xaml.cs",
+              "DocumentMoniker": "D:\\Thanh\u0027s Coding Workspace\\SongManagement\\SongManagement\\Views\\Add.xaml.cs",
+              "RelativeDocumentMoniker": "SongManagement\\Views\\Add.xaml.cs",
+              "ToolTip": "D:\\Thanh\u0027s Coding Workspace\\SongManagement\\SongManagement\\Views\\Add.xaml.cs",
+              "RelativeToolTip": "SongManagement\\Views\\Add.xaml.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAowBQAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-11T09:42:26.508Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Add.xaml",
+              "DocumentMoniker": "D:\\Thanh\u0027s Coding Workspace\\SongManagement\\SongManagement\\Views\\Add.xaml",
+              "RelativeDocumentMoniker": "SongManagement\\Views\\Add.xaml",
+              "ToolTip": "D:\\Thanh\u0027s Coding Workspace\\SongManagement\\SongManagement\\Views\\Add.xaml",
+              "RelativeToolTip": "SongManagement\\Views\\Add.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-11T09:36:08.541Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Search.xaml.cs",
               "DocumentMoniker": "D:\\Thanh\u0027s Coding Workspace\\SongManagement\\SongManagement\\Views\\Search.xaml.cs",
               "RelativeDocumentMoniker": "SongManagement\\Views\\Search.xaml.cs",
               "ToolTip": "D:\\Thanh\u0027s Coding Workspace\\SongManagement\\SongManagement\\Views\\Search.xaml.cs",
               "RelativeToolTip": "SongManagement\\Views\\Search.xaml.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAswBcAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAwBUAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-10T10:19:10.88Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "D:\\Thanh\u0027s Coding Workspace\\SongManagement\\SongManagement\\Views\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "SongManagement\\Views\\MainWindow.xaml.cs",
               "ToolTip": "D:\\Thanh\u0027s Coding Workspace\\SongManagement\\SongManagement\\Views\\MainWindow.xaml.cs",
               "RelativeToolTip": "SongManagement\\Views\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAWwBYAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-10T08:57:34.565Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "D:\\Thanh\u0027s Coding Workspace\\SongManagement\\SongManagement\\Views\\MainWindow.xaml",
               "RelativeDocumentMoniker": "SongManagement\\Views\\MainWindow.xaml",
@@ -99,46 +149,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "MainViewModel.cs",
               "DocumentMoniker": "D:\\Thanh\u0027s Coding Workspace\\SongManagement\\SongManagement\\ViewModel\\MainViewModel.cs",
               "RelativeDocumentMoniker": "SongManagement\\ViewModel\\MainViewModel.cs",
               "ToolTip": "D:\\Thanh\u0027s Coding Workspace\\SongManagement\\SongManagement\\ViewModel\\MainViewModel.cs",
               "RelativeToolTip": "SongManagement\\ViewModel\\MainViewModel.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBMAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAAWwDAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-10T08:35:25.668Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "RelayCommand.cs",
               "DocumentMoniker": "D:\\Thanh\u0027s Coding Workspace\\SongManagement\\SongManagement\\RelayCommand\\RelayCommand.cs",
               "RelativeDocumentMoniker": "SongManagement\\RelayCommand\\RelayCommand.cs",
               "ToolTip": "D:\\Thanh\u0027s Coding Workspace\\SongManagement\\SongManagement\\RelayCommand\\RelayCommand.cs",
               "RelativeToolTip": "SongManagement\\RelayCommand\\RelayCommand.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAIwB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-10T08:34:05.575Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Song.cs",
               "DocumentMoniker": "D:\\Thanh\u0027s Coding Workspace\\SongManagement\\SongManagement\\Models\\Song.cs",
               "RelativeDocumentMoniker": "SongManagement\\Models\\Song.cs",
               "ToolTip": "D:\\Thanh\u0027s Coding Workspace\\SongManagement\\SongManagement\\Models\\Song.cs",
               "RelativeToolTip": "SongManagement\\Models\\Song.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAAIwC4AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-10T08:28:47.713Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 12,
               "Title": "AssemblyInfo.cs",
               "DocumentMoniker": "D:\\Thanh\u0027s Coding Workspace\\SongManagement\\SongManagement\\AssemblyInfo.cs",
               "RelativeDocumentMoniker": "SongManagement\\AssemblyInfo.cs",
@@ -146,24 +196,22 @@
               "RelativeToolTip": "SongManagement\\AssemblyInfo.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-10T08:59:41.547Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-10T08:59:41.547Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Search.xaml",
               "DocumentMoniker": "D:\\Thanh\u0027s Coding Workspace\\SongManagement\\SongManagement\\Views\\Search.xaml",
               "RelativeDocumentMoniker": "SongManagement\\Views\\Search.xaml",
               "ToolTip": "D:\\Thanh\u0027s Coding Workspace\\SongManagement\\SongManagement\\Views\\Search.xaml",
               "RelativeToolTip": "SongManagement\\Views\\Search.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-07-10T15:23:51.699Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-10T15:23:51.699Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "App.xaml",
               "DocumentMoniker": "D:\\Thanh\u0027s Coding Workspace\\SongManagement\\SongManagement\\App.xaml",
               "RelativeDocumentMoniker": "SongManagement\\App.xaml",
@@ -175,7 +223,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "Microsoft.Common.CurrentVersion.targets",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",

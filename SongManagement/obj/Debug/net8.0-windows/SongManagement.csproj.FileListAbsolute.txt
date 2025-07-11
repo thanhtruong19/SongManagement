@@ -22,3 +22,6 @@ D:\Thanh's Coding Workspace\SongManagement\SongManagement\obj\Debug\net8.0-windo
 D:\Thanh's Coding Workspace\SongManagement\SongManagement\obj\Debug\net8.0-windows\SongManagement.pdb
 D:\Thanh's Coding Workspace\SongManagement\SongManagement\obj\Debug\net8.0-windows\SongManagement.genruntimeconfig.cache
 D:\Thanh's Coding Workspace\SongManagement\SongManagement\obj\Debug\net8.0-windows\ref\SongManagement.dll
+D:\Thanh's Coding Workspace\SongManagement\SongManagement\obj\Debug\net8.0-windows\Views\Add.baml
+D:\Thanh's Coding Workspace\SongManagement\SongManagement\obj\Debug\net8.0-windows\Views\Add.g.cs
+D:\Thanh's Coding Workspace\SongManagement\SongManagement\obj\Debug\net8.0-windows\SongManagement.sourcelink.json

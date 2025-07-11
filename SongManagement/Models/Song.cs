@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SongManagement.Models
 {
@@ -16,15 +12,50 @@ namespace SongManagement.Models
             set { _isSelected = value; OnPropertyChanged(nameof(IsSelected)); }
         }
 
-        public string ID { get; set; } = string.Empty;
-        public string SongName { get; set; } = string.Empty;
-        public string SingerName { get; set; } = string.Empty;
-        public string Genre { get; set; } = string.Empty;
-        public string Country { get; set; } = string.Empty;
-        public string ReleaseDate { get; set; } = string.Empty;
+        private int _id;
+        public int ID
+        {
+            get => _id;
+            set { _id = value; OnPropertyChanged(nameof(ID)); }
+        }
+
+        private string _songName = string.Empty;
+        public string SongName
+        {
+            get => _songName;
+            set { _songName = value; OnPropertyChanged(nameof(SongName)); }
+        }
+
+        private string _singerName = string.Empty;
+        public string SingerName
+        {
+            get => _singerName;
+            set { _singerName = value; OnPropertyChanged(nameof(SingerName)); }
+        }
+
+        private string _genre = string.Empty;
+        public string Genre
+        {
+            get => _genre;
+            set { _genre = value; OnPropertyChanged(nameof(Genre)); }
+        }
+
+        private string _country = string.Empty;
+        public string Country
+        {
+            get => _country;
+            set { _country = value; OnPropertyChanged(nameof(Country)); }
+        }
+
+        private DateTime? _releaseDate;
+        public DateTime? ReleaseDate
+        {
+            get => _releaseDate;
+            set { _releaseDate = value; OnPropertyChanged(nameof(ReleaseDate)); }
+        }
 
         public event PropertyChangedEventHandler? PropertyChanged;
-        protected void OnPropertyChanged(string name) =>
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        protected void OnPropertyChanged(string propertyName) =>
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }

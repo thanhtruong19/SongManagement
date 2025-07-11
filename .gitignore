@@ -1,0 +1,59 @@
+# Build và debug
+bin/
+obj/
+*.user
+*.suo
+*.exe
+*.dll
+*.pdb
+*.cache
+
+# Visual Studio
+.vs/
+*.vcxproj.*
+*.csproj.user
+*.ncb
+*.sdf
+*.dbmdl
+*.dbproj
+
+# NuGet
+*.nupkg
+packages/
+project.lock.json
+.nuget/
+
+# Auto-generated files
+Generated_Code/
+GeneratedFiles/
+*.g.cs
+*.g.i.cs
+
+# Test kết quả
+TestResult/
+*.coverage
+*.coveragexml
+
+# File log, hệ thống
+*.log
+*.DS_Store
+*.idea/
+*.ReSharper/
+*.DotSettings
+*.vsconfig
+
+# Tạm thời và IDE-specific
+*.vscode/
+*.vscode/*
+*.swp
+*.bak
+*.tmp
+
+# File cấu hình người dùng
+*.config
+*.launch.json
+*.settings
+
+# Cấu hình Rider hoặc JetBrains
+.idea/
+*.sln.iml

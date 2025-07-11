@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\SongManagement",
+    "\\SongManagement\\RelayCommand",
+    "\\SongManagement\\ViewModel",
+    "\\SongManagement\\Views"
+  ],
+  "PreviewInSolutionExplorer": false
+}

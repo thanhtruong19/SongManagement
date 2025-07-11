@@ -24,12 +24,12 @@ namespace SongManagement.ViewModel
         {
             Songs = new ObservableCollection<Song>
         {
-            new Song { ID = "001", SongName = "Lạc trôi", SingerName = "Sơn Tùng", Genre = "EDM", Country = "Việt Nam", ReleaseDate = "2016/05/30" },
-            new Song { ID = "002", SongName = "Nơi này có anh", SingerName = "Sơn Tùng", Genre = "Pop", Country = "Việt Nam", ReleaseDate = "2017/02/14" }
+            new Song { ID = 1, SongName = "Lạc trôi", SingerName = "Sơn Tùng", Genre = "EDM", Country = "Việt Nam", ReleaseDate = DateTime.Parse("2016/05/30") },
+            new Song { ID = 2, SongName = "Nơi này có anh", SingerName = "Sơn Tùng", Genre = "Pop", Country = "Việt Nam", ReleaseDate = DateTime.Parse("2016/05/30") }
         };
 
             ToggleSearchCommand = new RelayCommand.RelayCommand(_ => IsSearchVisible = !IsSearchVisible);
-            SearchCommand = new RelayCommand.RelayCommand(_ => ApplySearch());
+            //SearchCommand = new RelayCommand.RelayCommand(_ => ApplySearch());
         }
 
         //private void ApplySearch()
@@ -39,6 +39,8 @@ namespace SongManagement.ViewModel
         //    foreach (var song in filtered)
         //        Songs.Add(song);
         //}
+
+
 
         public event PropertyChangedEventHandler? PropertyChanged;
         protected void OnPropertyChanged(string name) =>
