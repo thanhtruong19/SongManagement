@@ -1,0 +1,43 @@
+﻿<Window x:Class="SongManagementApp.Views.SearchSong"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SongManagementApp.Views"
+        mc:Ignorable="d"
+        Title="SearchSong" Height="450" Width="500">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="0,0,0,10">
+            <TextBlock Text="Search Songs" FontSize="20" FontWeight="Bold" Margin="0,0,0,10"/>
+            <StackPanel Orientation="Vertical" Margin="0,0,0,10">
+                <TextBlock Text="ID:"/>
+                <TextBox Text="{Binding SearchID}" Margin="0,5"/>
+                <TextBlock Text="Song Name:"/>
+                <TextBox Text="{Binding SearchSongName}" Margin="0,5"/>
+                <TextBlock Text="Singer Name:"/>
+                <TextBox Text="{Binding SearchSingerName}" Margin="0,5"/>
+                <TextBlock Text="Genre:"/>
+                <TextBox Text="{Binding SearchGenre}" Margin="0,5"/>
+                <TextBlock Text="Country:"/>
+                <TextBox Text="{Binding SearchCountry}" Margin="0,5"/>
+                <TextBlock Text="Release Date:"/>
+                <StackPanel Orientation="Horizontal" Margin="0,5">
+                    <DatePicker SelectedDate="{Binding SearchReleaseDateStart}" Margin="0,0,5,0" />
+                    <TextBlock Text="~" VerticalAlignment="Center" />
+                    <DatePicker SelectedDate="{Binding SearchReleaseDateEnd}" Margin="5,0,0,0" />
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Search" Width="80" Margin="5" Command="{Binding SearchCommand}"/>
+            <Button Content="Back" Width="80" Margin="5" />
+        </StackPanel>
+    </Grid>
+</Window>
