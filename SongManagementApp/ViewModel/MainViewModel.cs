@@ -118,7 +118,7 @@ namespace SongManagementApp.ViewModel
         private async Task UpdateSong(object arg)
         {
             var songsToUpdate = Songs.Where(s => s.IsSelected).ToList(); //songsToUpdate giữ tham chiếu đến cùng một instance của Song, không phải tạo ra bản sao.
-            try
+            if (songsToUpdate.Any())
             {
                 foreach (var song in songsToUpdate)
                 {
@@ -127,13 +127,11 @@ namespace SongManagementApp.ViewModel
                 }
                 MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-            catch (Exception ex)
+            else 
             {
-                MessageBox.Show($"Lỗi khi cập nhật bài hát: {ex.Message}", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Không có bài hát nào được chọn để cập nhật", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-
-
 
         //Xử lí selected all cho DataGrid (tạm thời chưa dùng đến)
         private bool _selectAll;
