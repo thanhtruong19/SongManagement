@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SongManagementApp.Views"
         mc:Ignorable="d"
-        Title="SearchSong" Height="450" Width="500">
+        Title="SearchSong" Height="450" Width="500"
+        Name="searchsong">
     <Grid Margin="5">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -17,27 +18,27 @@
             <TextBlock Text="Search Songs" FontSize="20" FontWeight="Bold" Margin="0,0,0,10"/>
             <StackPanel Orientation="Vertical" Margin="0,0,0,10">
                 <TextBlock Text="ID:"/>
-                <TextBox Text="{Binding SearchID}" Margin="0,5"/>
+                <TextBox Text="{Binding ID}" Margin="0,5"/>
                 <TextBlock Text="Song Name:"/>
-                <TextBox Text="{Binding SearchSongName}" Margin="0,5"/>
+                <TextBox Text="{Binding SongName}" Margin="0,5"/>
                 <TextBlock Text="Singer Name:"/>
-                <TextBox Text="{Binding SearchSingerName}" Margin="0,5"/>
+                <TextBox Text="{Binding SingerName}" Margin="0,5"/>
                 <TextBlock Text="Genre:"/>
-                <TextBox Text="{Binding SearchGenre}" Margin="0,5"/>
+                <TextBox Text="{Binding Genre}" Margin="0,5"/>
                 <TextBlock Text="Country:"/>
-                <TextBox Text="{Binding SearchCountry}" Margin="0,5"/>
+                <TextBox Text="{Binding Country}" Margin="0,5"/>
                 <TextBlock Text="Release Date:"/>
                 <StackPanel Orientation="Horizontal" Margin="0,5">
-                    <DatePicker SelectedDate="{Binding SearchReleaseDateStart}" Margin="0,0,5,0" />
+                    <DatePicker SelectedDate="{Binding StartDate}" Margin="0,0,5,0" />
                     <TextBlock Text="~" VerticalAlignment="Center" />
-                    <DatePicker SelectedDate="{Binding SearchReleaseDateEnd}" Margin="5,0,0,0" />
+                    <DatePicker SelectedDate="{Binding EndDate}" Margin="5,0,0,0" />
                 </StackPanel>
             </StackPanel>
         </StackPanel>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Content="Search" Width="80" Margin="5" Command="{Binding SearchCommand}"/>
-            <Button Content="Back" Width="80" Margin="5" />
+            <Button Content="Search" Width="80" Margin="5" Command="{Binding SearchCommand}" CommandParameter="{x:Reference Name = searchsong}" Click="Button_Click_1"/>
+            <Button Content="Back" Width="80" Margin="5" IsDefault="True" Click="Button_Click" />
         </StackPanel>
     </Grid>
 </Window>

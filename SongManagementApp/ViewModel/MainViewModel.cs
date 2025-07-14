@@ -66,11 +66,22 @@ namespace SongManagementApp.ViewModel
 
         private void ShowSearchWindow(object obj)
         {
+            var searchVm = new SearchSongViewModel(_repo); // gán repo của main window cho SearchSongViewModel
             var MainWindow = (Window)obj;
-            SearchSong searchSong = new SearchSong();
+            SearchSong searchSong = new SearchSong { DataContext = searchVm };
             searchSong.Owner = MainWindow;
             searchSong.WindowStartupLocation = WindowStartupLocation.CenterOwner;
-            searchSong.Show();
+            bool? result = searchSong.ShowDialog(); // Hiển thị cửa sổ tìm kiếm
+
+            if (searchVm.FilteredSongs.Any())
+            {
+                Songs = new ObservableCollection<Song>(searchVm.FilteredSongs);
+                OnPropertyChanged(nameof(Songs));
+            }
+            else
+            {
+                Songs = _repo.GetAll(); // Nếu không có kết quả tìm kiếm, hiển thị lại tất cả bài hát
+            }
         }
 
         //Command của nút Delete
@@ -82,12 +93,20 @@ namespace SongManagementApp.ViewModel
         private async Task DeleteSong(object obj)
         {
             var songsToDelete = Songs.Where(s => s.IsSelected).ToList(); // Tạo bản sao an toàn
-            await _repo.Delete(songsToDelete); // Xóa từ repository
-            foreach (var song in songsToDelete)
+            if (!songsToDelete.Any())
             {
-                Songs.Remove(song); // phải xóa cả ở song để giao diện cập nhật 
+                MessageBox.Show("Vui lòng chọn ít nhất một bài hát để xóa.", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
             }
-            MessageBox.Show("Xóa bài hát thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+            else
+            {
+                await _repo.Delete(songsToDelete); // Xóa từ repository
+                foreach (var song in songsToDelete)
+                {
+                    Songs.Remove(song); // phải xóa cả ở song để giao diện cập nhật 
+                }
+                MessageBox.Show("Xóa bài hát thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
         //Command của nút Update
@@ -99,12 +118,19 @@ namespace SongManagementApp.ViewModel
         private async Task UpdateSong(object arg)
         {
             var songsToUpdate = Songs.Where(s => s.IsSelected).ToList(); //songsToUpdate giữ tham chiếu đến cùng một instance của Song, không phải tạo ra bản sao.
-            foreach (var song in songsToUpdate)
+            try
             {
-                await _repo.Update(song); // Cập nhật từng bài hát
-                song.IsSelected = false; // Bỏ chọn bài hát sau khi cập nhật
+                foreach (var song in songsToUpdate)
+                {
+                    await _repo.Update(song); // Cập nhật từng bài hát
+                    song.IsSelected = false; // Bỏ chọn bài hát sau khi cập nhật
+                }
+                MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-            MessageBox.Show("Cập nhật thành công!","Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi cập nhật bài hát: {ex.Message}", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
 

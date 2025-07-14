@@ -31,7 +31,6 @@ namespace SongManagementApp.ViewModel
 
         public AddSongViewModel()
         {
-           
             AddSongCommand = new AsyncRelayCommand(AddSong, CanAddSong);
         }
 
@@ -55,11 +54,18 @@ namespace SongManagementApp.ViewModel
                 Country = this.Country,
                 ReleaseDate = this.ReleaseDate
             };
-            await _repo.Add(song);
-            Songs.Add(song);
-            MessageBox.Show("Thêm bài hát thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
-            Window addSongWindow = (Window)obj;
-            addSongWindow.Close();
+            try
+            {
+                await _repo.Add(song);
+                Songs.Add(song);
+                MessageBox.Show("Thêm bài hát thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                Window addSongWindow = (Window)obj;
+                addSongWindow.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi thêm bài hát: {ex.Message}", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);   
+            }
         }
         //giải thích tại sao cập nhập :Songs là một ObservableCollection<Song>
         //ObservableCollection<T> triển khai interface INotifyCollectionChanged.

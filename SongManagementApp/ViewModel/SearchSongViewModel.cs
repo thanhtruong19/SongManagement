@@ -7,60 +7,68 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace SongManagementApp.ViewModel
 {
-    //public class SearchSongViewModel : INotifyPropertyChanged
-    //{
-    //    public int? ID { get; set; }
-    //    public string SongName { get; set; }
-    //    public string SingerName { get; set; }
-    //    public string Genre { get; set; }
-    //    public string Country { get; set; }
-    //    public DateTime? StartDate { get; set; }
-    //    public DateTime? EndDate { get; set; }
+    public class SearchSongViewModel : INotifyPropertyChanged
+    {
+        // Các thuộc tính để lưu trữ thông tin tìm kiếm mà giao diện trả về
+        public int? ID { get; set; }
+        public string? SongName { get; set; }
+        public string? SingerName { get; set; }
+        public string? Genre { get; set; }
+        public string? Country { get; set; }
+        public DateTime? StartDate { get; set; }
+        public DateTime? EndDate { get; set; }
 
-    //    private ObservableCollection<Song> _filteredSongs;
-    //    public ObservableCollection<Song> FilteredSongs
-    //    {
-    //        get => _filteredSongs;
-    //        set 
-    //        { 
-    //            _filteredSongs = value; 
-    //            OnPropertyChanged(nameof(FilteredSongs)); 
-    //        }
-    //    }
+        private readonly SongRepository _repo; // Tạo một instance của SongRepository để truy cập dữ liệu
+        //khai báo class để chứa kết quả tìm kiếm
+        private ObservableCollection<Song> _filteredSongs;
+        public ObservableCollection<Song> FilteredSongs
+        {
+            get => _filteredSongs;
+            set
+            {
+                _filteredSongs = value;
+                OnPropertyChanged(nameof(FilteredSongs));
+            }
+        }
 
-    //    //  Command 
-    //    public ICommand SearchCommand { get; set; }
-    //    public SearchSongViewModel()
-    //    {
-    //        FilteredSongs = new ObservableCollection<Song>();
-    //        SearchCommand = new RelayCommand(_ => Search());
-    //    }
+        //  Command 
+        public ICommand SearchCommand { get; set; }
 
-    //    private void Search()
-    //    {
-    //        var all = SongManager.GetSongs();
+        public SearchSongViewModel()
+        {
+            FilteredSongs = new ObservableCollection<Song>();
+            SearchCommand = new AsyncRelayCommand(SearchSong, CanSearchSong);
+        }
+        public SearchSongViewModel(SongRepository repo) : this() // Gọi constructor không tham số để khởi tạo SearchSongViewModel
+        {
+            _repo = repo ?? throw new ArgumentNullException(nameof(repo)); //  gán repo của main window cho SearchSongViewModel
+        }
 
-    //        var query = all.Where(s =>
-    //            // ID filter
-    //            (!ID.HasValue || s.ID == ID.Value)
-    //            // Text filters (ignore case, contains)
-    //            && (string.IsNullOrWhiteSpace(SongName) || s.SongName.IndexOf(SongName, StringComparison.OrdinalIgnoreCase) >= 0)
-    //            && (string.IsNullOrWhiteSpace(SingerName) || s.SingerName.IndexOf(SingerName, StringComparison.OrdinalIgnoreCase) >= 0)
-    //            && (string.IsNullOrWhiteSpace(Genre) || s.Genre.IndexOf(Genre, StringComparison.OrdinalIgnoreCase) >= 0)
-    //            && (string.IsNullOrWhiteSpace(Country) || s.Country.IndexOf(Country, StringComparison.OrdinalIgnoreCase) >= 0)
-    //            // Date range
-    //            && (!StartDate.HasValue || s.ReleaseDate >= StartDate.Value)
-    //            && (!EndDate.HasValue || s.ReleaseDate <= EndDate.Value)
-    //        );
 
-    //        // Cập nhật kết quả
-    //        FilteredSongs.Clear();
-    //        foreach (var song in query)
-    //            FilteredSongs.Add(song);
-    //    }
 
+        private async Task SearchSong(object obj)
+        {
+            var results = await _repo.SearchAsync(ID, SongName, SingerName, Genre, Country, StartDate, EndDate);
+            FilteredSongs = new ObservableCollection<Song>(results);
+            OnPropertyChanged(nameof(FilteredSongs));
+
+            Window searchWindow = obj as Window;
+            searchWindow.Close(); // Đóng cửa sổ tìm kiếm sau khi tìm kiếm xong
+        }
+
+        private bool CanSearchSong(object obj)
+        {
+            return true;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string propertyName) =>
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
+    }
 }

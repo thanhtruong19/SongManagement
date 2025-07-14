@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SongManagementApp.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,17 @@ namespace SongManagementApp.Views
         public SearchSong()
         {
             InitializeComponent();
+            SearchSongViewModel searchSongViewModel = new SearchSongViewModel();
+            this.DataContext = searchSongViewModel;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close(); // Đóng cửa sổ tìm kiếm khi nút được nhấn
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
         }
     }
 }

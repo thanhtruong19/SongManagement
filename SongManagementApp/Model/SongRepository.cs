@@ -43,5 +43,28 @@ namespace SongManagementApp.Model
             _ctx.Songs.Update(song);
             await _ctx.SaveChangesAsync();
         }
+
+        public async Task<IEnumerable<Song>> SearchAsync(int? id, string? SongName, string? SingerName, string? genre, string? country, DateTime? start, DateTime? end)
+        {
+            return await _ctx.Songs
+                .Where(s =>
+                    // ID filter
+                    (!id.HasValue || s.ID == id.Value) //kiểm tra nếu id có giá trị thì so sánh với ID của bài hát
+                   // Text filters (treat null or empty as “no filter”)
+                    && (string.IsNullOrWhiteSpace(SongName) //kiểm tra songName có giá trị hay không, nếu có thì so sánh với tên bài hát, không quan trọng chữ hoa chữ thường
+                        || s.SongName.Contains(SongName))
+                    && (string.IsNullOrWhiteSpace(SingerName) //kiểm tra songName có giá trị hay không, nếu có thì so sánh với tên bài hát, không quan trọng chữ hoa chữ thường
+                        || s.SingerName.Contains(SingerName))
+                    && (string.IsNullOrWhiteSpace(genre)
+                        || s.Genre.Contains(genre))
+                    && (string.IsNullOrWhiteSpace(country)
+                        || s.Country.Contains(country))
+                    // Date range
+                    && (!start.HasValue || s.ReleaseDate >= start.Value)// Nếu không nhập StartDate thì !start.HasValue = true → bỏ qua điều kiện, Nếu nhập StartDate rồi thì chỉ lấy những bản ghi có ReleaseDate ≥ start.
+                    && (!end.HasValue || s.ReleaseDate <= end.Value) // tương tự
+                )
+                .AsNoTracking()
+                .ToListAsync();
+        }
     }
 }

@@ -29,6 +29,7 @@ namespace SongManagementApp.Views
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            this.Close(); // Đóng cửa sổ thêm bài hát khi nút được nhấn
         }
     }
 }
