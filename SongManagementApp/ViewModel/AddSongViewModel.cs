@@ -14,6 +14,7 @@ namespace SongManagementApp.ViewModel
 
     class AddSongViewModel
     {
+        private readonly SongRepository _repo = new SongRepository();
         public ICommand AddSongCommand { get; set; }
 
         //cái đống dưới này để hứng data được binding từ giao diện trả về
@@ -29,10 +30,10 @@ namespace SongManagementApp.ViewModel
         public AddSongViewModel()
         {
             
-            AddSongCommand = new RelayCommand(AddSong, CanAddSong);
+            AddSongCommand = new AsyncRelayCommand(AddSong, CanAddSong);
         }
 
-        private void AddSong(object obj)
+        private async Task AddSong(object obj)
         {
             ObservableCollection<Song> getListSong = SongManager.GetSongs();
             
@@ -47,7 +48,8 @@ namespace SongManagementApp.ViewModel
                 Country = this.Country,
                 ReleaseDate = this.ReleaseDate
             };
-            SongManager.AddSongs(song);
+
+            await _repo.Add(song);
 
             Window addSongWindow = (Window)obj;
             addSongWindow.Close();
