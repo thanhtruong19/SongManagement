@@ -5,6 +5,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,20 +14,28 @@ using System.Windows.Input;
 
 namespace SongManagementApp.ViewModel
 {
-    public class MainViewModel
+    public class MainViewModel : INotifyPropertyChanged
     {
         public ObservableCollection<Song> Songs { get; set; }
+        private readonly SongRepository _repo = new SongRepository();
         public ICommand AddWindowCommand { get; set; }
         public ICommand SearchWindowCommand { get; set; }
         public ICommand DeleteActionCommand { get; set; }
+        public ICommand UpdateActionCommand { get; set; }
+
+
         public MainViewModel()
         {
-            Songs = SongManager.GetSongs();
+            Songs = _repo.GetAll();
+
+            //Command mở các cửa sổ
             AddWindowCommand = new RelayCommand(ShowAddWindow, CanShowAddWindow);
             SearchWindowCommand = new RelayCommand(ShowSearchWindow, CanShowSearchWindow);
-            DeleteActionCommand = new RelayCommand(DeleteSong, CanDeleteSong);
-        }
 
+            //Command của các nút
+            DeleteActionCommand = new AsyncRelayCommand(DeleteSong, CanDeleteSong);
+            UpdateActionCommand = new AsyncRelayCommand(UpdateSong, CanUpdateSong);
+        }
 
 
         //Command của AddWindow 
@@ -38,10 +47,15 @@ namespace SongManagementApp.ViewModel
         private void ShowAddWindow(object obj)
         {
             var MainWindow = (Window)obj;
-            AddSong addSong = new AddSong();
+
+            //xử lí việc truyền bộ sưu tập ObservableCollection<Song> từ MainViewModel sang AddSongViewModel
+            var mainViewModel = MainWindow.DataContext as MainViewModel;
+            var addVm = new AddSongViewModel(mainViewModel.Songs);
+            AddSong addSong = new AddSong{ DataContext = addVm }; //khởi chạy cửa sổ add song
             addSong.Owner = MainWindow;
             addSong.WindowStartupLocation = WindowStartupLocation.CenterOwner;
             addSong.Show();
+
         }
 
         //Command của SearchWindow 
@@ -59,21 +73,62 @@ namespace SongManagementApp.ViewModel
             searchSong.Show();
         }
 
-        //Command của Delete Window
+        //Command của nút Delete
         private bool CanDeleteSong(object obj)
         {
             return true;
         }
 
-        private void DeleteSong(object obj)
+        private async Task DeleteSong(object obj)
         {
             var songsToDelete = Songs.Where(s => s.IsSelected).ToList(); // Tạo bản sao an toàn
-
+            await _repo.Delete(songsToDelete); // Xóa từ repository
             foreach (var song in songsToDelete)
             {
-                Songs.Remove(song); // ✅ Xóa từng bài hát mà không ảnh hưởng vòng lặp
+                Songs.Remove(song); // phải xóa cả ở song để giao diện cập nhật 
+            }
+            MessageBox.Show("Xóa bài hát thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        //Command của nút Update
+        private bool CanUpdateSong(object obj)
+        {
+            return true;
+        }
+
+        private async Task UpdateSong(object arg)
+        {
+            var songsToUpdate = Songs.Where(s => s.IsSelected).ToList(); //songsToUpdate giữ tham chiếu đến cùng một instance của Song, không phải tạo ra bản sao.
+            foreach (var song in songsToUpdate)
+            {
+                await _repo.Update(song); // Cập nhật từng bài hát
+                song.IsSelected = false; // Bỏ chọn bài hát sau khi cập nhật
+            }
+            MessageBox.Show("Cập nhật thành công!","Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+
+
+        //Xử lí selected all cho DataGrid (tạm thời chưa dùng đến)
+        private bool _selectAll;
+        public bool SelectAll
+        {
+            get => _selectAll;
+            set
+            {
+                if (_selectAll == value) return;
+                _selectAll = value;
+                OnPropertyChanged(nameof(SelectAll));
+
+                // whenever SelectAll changes, update every item
+                foreach (var song in Songs)
+                    song.IsSelected = value;
             }
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string propertyName) =>
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }
 

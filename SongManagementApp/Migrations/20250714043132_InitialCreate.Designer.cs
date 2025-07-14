@@ -12,8 +12,8 @@ using SongManagementApp.Model;
 namespace SongManagementApp.Migrations
 {
     [DbContext(typeof(SongDbContext))]
-    [Migration("20250713162630_Initial")]
-    partial class Initial
+    [Migration("20250714043132_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -28,20 +28,20 @@ namespace SongManagementApp.Model
 
         public async Task Add(Song song)
         {
-            _ctx.Songs.Add(song);
+            _ctx.Songs.Add(song); //hàm add này là add trực tiếp vào DbSet<Song> chứ không phải add vào ObservableCollection
             await _ctx.SaveChangesAsync(); //bắt buộc await
         }
 
-        public void Delete(IEnumerable<Song> songs)
+        public async Task Delete(IEnumerable<Song> songs)
         {
             _ctx.Songs.RemoveRange(songs);
-            _ctx.SaveChanges();
+            await _ctx.SaveChangesAsync();
         }
 
-        public void Update(Song song)
+        public async Task Update(Song song)
         {
             _ctx.Songs.Update(song);
-            _ctx.SaveChanges();
+            await _ctx.SaveChangesAsync();
         }
     }
 }

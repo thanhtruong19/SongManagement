@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:SongManagementApp.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="650" Width="1000"
-        Name ="mainwindow">
+        Name ="mainwindow"
+        WindowStartupLocation="CenterScreen">
     <Grid Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -22,7 +23,7 @@
             <StackPanel Orientation="Horizontal">
                 <Button Content="Search" CommandParameter="{x:Reference Name=mainwindow}" Command="{Binding SearchWindowCommand}" Margin="5,0"/>
                 <Button Content="Add" CommandParameter="{x:Reference Name=mainwindow}" Command="{Binding AddWindowCommand}" Margin="5,0"/>
-                <Button Content="Update" Margin="5,0"/>
+                <Button Content="Update" Command = "{Binding UpdateActionCommand}"  Margin="5,0"/>
                 <Button Content="Delete" Command="{Binding DeleteActionCommand}" Margin="5,0"/>
                 <Button Content="Export CSV" Margin="500,0" DockPanel.Dock="Right"/>
             </StackPanel>
@@ -34,7 +35,7 @@
                 <DataGridTemplateColumn Width="40">
                     <DataGridTemplateColumn.HeaderTemplate>
                         <DataTemplate>
-                            <CheckBox HorizontalAlignment="Center"/>
+                            <CheckBox IsChecked="{Binding IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.HeaderTemplate>
                     <DataGridTemplateColumn.CellTemplate>

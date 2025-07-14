@@ -26,5 +26,6 @@ namespace SongManagementApp.Views
             MainViewModel mainviewmodel = new MainViewModel();
             this.DataContext = mainviewmodel;
         }
+    
     }
 }
